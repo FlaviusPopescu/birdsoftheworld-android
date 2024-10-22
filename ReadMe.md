@@ -1,5 +1,5 @@
-# Kotlin Playground
+# eBird.org & Birds of the World Explorer 
 
-Templates, starter/playground projects for Kotlin, Compose Multiplatform, Android, and Gradle.
-
-See individual branches for various targets.
+An Android playground application for exploring bird observations, species, etc. from:
+- https://ebird.org/home
+- https://birdsoftheworld.org/bow/home

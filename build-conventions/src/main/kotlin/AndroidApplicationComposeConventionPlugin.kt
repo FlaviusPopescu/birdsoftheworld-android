@@ -1,12 +1,15 @@
 import com.android.build.api.dsl.ApplicationExtension
 import dev.flavius.build.JAVA_VERSION
-import dev.flavius.build.addComposeBom
-import dev.flavius.build.addHilt
-import dev.flavius.build.addTesting
-import dev.flavius.build.configureAndroid
+import dev.flavius.build.allWarningsAsErrors
+import dev.flavius.build.androidSdkLevels
+import dev.flavius.build.composeBom
+import dev.flavius.build.hilt
+import dev.flavius.build.optIns
+import dev.flavius.build.testing
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 
 class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
@@ -20,10 +23,15 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
 
             kotlinExtension.apply { jvmToolchain(JAVA_VERSION) }
 
-            configureAndroid<ApplicationExtension>()
-            addHilt()
-            addComposeBom()
-            addTesting()
+            androidSdkLevels<ApplicationExtension>()
+            hilt()
+            composeBom()
+            testing()
+
+            optIns<KotlinAndroidProjectExtension>(
+                "com.google.accompanist.permissions.ExperimentalPermissionsApi",
+            )
+            allWarningsAsErrors<KotlinAndroidProjectExtension>()
         }
     }
 }

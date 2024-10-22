@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permissions_title">Welcome!</string>
+    <string name="permissions_description">
+        "You can use your device's approximate location in order to see results near you. 🧭"
+    </string>
+    <string name="permissions_description_secondary">
+        "This does not track or record your location, and is only used when searching."
+    </string>
+    <string name="permissions_coarse_location_button_content_description">
+        Share your approximate location
+    </string>
+    <string name="permissions_coarse_location_button">Share approximate location</string>
+    <string name="permissions_image">a drawing of a common kingfisher</string>
+</resources>

@@ -1,4 +1,4 @@
-package dev.flavius.botw.kotlin.ui.theme
+package dev.flavius.botw.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

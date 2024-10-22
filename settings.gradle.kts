@@ -24,6 +24,7 @@ dependencyResolutionManagement {
             credentials.password = providers.gradleProperty("mapbox_download_token").get()
             authentication.create<BasicAuthentication>("basic")
         }
+        mavenLocal()
     }
     versionCatalogs {
         create("libs") {

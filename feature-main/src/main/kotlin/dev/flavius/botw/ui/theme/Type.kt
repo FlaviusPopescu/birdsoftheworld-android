@@ -1,4 +1,4 @@
-package dev.flavius.botw.kotlin.ui.theme
+package dev.flavius.botw.ui.theme
 
 import androidx.compose.material3.Typography
 

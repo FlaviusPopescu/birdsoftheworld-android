@@ -8,4 +8,6 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
     val message = "Android (API ${Build.VERSION.SDK_INT})"
+
+    var hasLocationPermission = false
 }

@@ -6,7 +6,7 @@ import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.kotlin
 
-internal inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.configureAndroid() {
+internal inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.androidSdkLevels() {
     extensions.configure(T::class) {
         apply {
             compileSdk = AndroidSdkConstants.COMPILE_SDK
@@ -23,17 +23,19 @@ internal inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.conf
  * to match the aliases defined in the default version catalog (i.e. named "libs"). If they are not
  * defined, then the build should fail.
  */
-internal fun Project.addHilt(
+internal fun Project.hilt(
     compilerAlias: String = "dagger-hiltCompiler",
     hiltAndroidAlias: String = "dagger-hiltAndroid",
+    hiltNavigationCompose: String = "androidx-hilt-navigationCompose",
 ) {
     dependencies {
         add("ksp", libs.findLibrary(compilerAlias).get())
         add("implementation", libs.findLibrary(hiltAndroidAlias).get())
+        add("implementation", libs.findLibrary(hiltNavigationCompose).get())
     }
 }
 
-internal fun Project.addComposeBom(
+internal fun Project.composeBom(
     composeBomAlias: String = "androidx-compose-bom",
     composeUiToolingAlias: String = "androidx-compose-uiTooling",
     composeUiToolingPreviewAlias: String = "androidx-compose-uiToolingPreview",
@@ -47,7 +49,7 @@ internal fun Project.addComposeBom(
     }
 }
 
-internal fun Project.addTesting(
+internal fun Project.testing(
     uiTestJunit4Alias: String = "androidx-compose-uiTestJunit4",
     uiTestJunitManifest: String = "androidx-compose-uiTestManifest",
 ) {

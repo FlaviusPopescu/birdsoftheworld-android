@@ -1,9 +1,9 @@
 import com.android.build.api.dsl.LibraryExtension
 import dev.flavius.build.JAVA_VERSION
-import dev.flavius.build.addComposeBom
-import dev.flavius.build.addHilt
-import dev.flavius.build.addTesting
-import dev.flavius.build.configureAndroid
+import dev.flavius.build.composeBom
+import dev.flavius.build.hilt
+import dev.flavius.build.testing
+import dev.flavius.build.androidSdkLevels
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -20,10 +20,10 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
 
             kotlinExtension.apply { jvmToolchain(JAVA_VERSION) }
 
-            configureAndroid<LibraryExtension>()
-            addHilt()
-            addComposeBom()
-            addTesting()
+            androidSdkLevels<LibraryExtension>()
+            hilt()
+            composeBom()
+            testing()
         }
     }
 }
