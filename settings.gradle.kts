@@ -33,6 +33,7 @@ dependencyResolutionManagement {
             fun PluginAliasBuilder.withoutVersion() = version("unspecified")
             plugin("convention-androidApplicationCompose", "android.app.compose").withoutVersion()
             plugin("convention-androidLibraryCompose", "android.lib.compose").withoutVersion()
+            plugin("convention-androidLibrary", "android.lib").withoutVersion()
             plugin("convention-jvm", "jvm.lib").withoutVersion()
             plugin("convention-mapbox", "mapbox").withoutVersion()
         }
@@ -42,5 +43,8 @@ dependencyResolutionManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
-include(":data")
-include(":feature-main")
+include(":core:data")
+include(":core:model")
+include(":core:network")
+include(":core:storage")
+include(":feature:nearby")

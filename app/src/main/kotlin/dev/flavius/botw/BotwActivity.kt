@@ -19,11 +19,12 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
 import dagger.hilt.android.AndroidEntryPoint
+import dev.flavius.botw.feature.nearby.NearbyScreen
+import dev.flavius.botw.feature.nearby.NearbyViewModel
 import dev.flavius.botw.navigation.Main
 import dev.flavius.botw.navigation.Permissions
 import dev.flavius.botw.permissions.PermissionsScreen
-import dev.flavius.botw.ui.MainScreen
-import dev.flavius.botw.ui.theme.AppTheme
+import dev.flavius.botw.theme.AppTheme
 
 @AndroidEntryPoint
 class BotwActivity : ComponentActivity() {
@@ -71,10 +72,10 @@ class BotwActivity : ComponentActivity() {
                         )
                     }
                     composable<Main> {
-                        val mainViewModel = hiltViewModel<MainViewModel>().apply {
+                        val nearbyViewModel = hiltViewModel<NearbyViewModel>().apply {
                             hasLocationPermission = locationPermissionState.status.isGranted
                         }
-                        MainScreen(mainViewModel) {
+                        NearbyScreen(nearbyViewModel) {
                             navController.popBackStack()
                             navController.navigate(Permissions)
                         }

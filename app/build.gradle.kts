@@ -4,9 +4,8 @@ plugins {
     alias(libs.plugins.convention.mapbox)
 }
 
-android.namespace = "dev.flavius.botw"
-
 android {
+    namespace = "dev.flavius.botw"
     buildFeatures.buildConfig = true
     defaultConfig.buildConfigField(
         "String",
@@ -15,10 +14,19 @@ android {
             property("mapbox_access_token").toString().let { "\"$it\"" }
         }.getOrDefault("\"\"")
     )
+    packaging {
+        resources {
+            excludes.addAll(
+                listOf(
+                    "META-INF/INDEX.LIST",
+                )
+            )
+        }
+    }
 }
 
 dependencies {
-    implementation(projects.featureMain)
+    implementation(projects.feature.nearby)
     implementation(libs.accompanist.permissions)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)

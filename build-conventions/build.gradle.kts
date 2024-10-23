@@ -24,6 +24,10 @@ gradlePlugin {
             id = "android.lib.compose"
             implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
+        create("androidLib") {
+            id = "android.lib"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
         create("jvmLib") {
             id = "jvm.lib"
             implementationClass = "JvmLibraryConventionPlugin"
