@@ -2,7 +2,6 @@
 
 import org.gradle.api.initialization.dsl.VersionCatalogBuilder.PluginAliasBuilder
 
-
 rootProject.name = "botw-android"
 
 pluginManagement {
@@ -29,12 +28,13 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             from("dev.flavius:version-catalog:+")
-            // define simplified accessors for convention plugins; the version is not required.
+
+            // add convention plugins to this catalog (these local plugins do not specify a version)
             fun PluginAliasBuilder.withoutVersion() = version("unspecified")
-            plugin("convention-composeAndroidApplication", "dev.flavius.build.convention.application.android.compose")
-                .withoutVersion()
-            plugin("convention-composeAndroidLibrary", "dev.flavius.build.convention.library.android.compose")
-                .withoutVersion()
+            plugin("convention-androidApplicationCompose", "android.app.compose").withoutVersion()
+            plugin("convention-androidLibraryCompose", "android.lib.compose").withoutVersion()
+            plugin("convention-jvm", "jvm.lib").withoutVersion()
+            plugin("convention-mapbox", "mapbox").withoutVersion()
         }
     }
 }
@@ -42,4 +42,5 @@ dependencyResolutionManagement {
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
+include(":data")
 include(":feature-main")

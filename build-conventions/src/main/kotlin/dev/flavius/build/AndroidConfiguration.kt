@@ -49,7 +49,7 @@ internal fun Project.composeBom(
     }
 }
 
-internal fun Project.testing(
+internal fun Project.composeTesting(
     uiTestJunit4Alias: String = "androidx-compose-uiTestJunit4",
     uiTestJunitManifest: String = "androidx-compose-uiTestManifest",
 ) {

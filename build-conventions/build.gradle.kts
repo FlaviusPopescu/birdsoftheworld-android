@@ -1,5 +1,6 @@
 plugins {
     `kotlin-dsl`
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "dev.flavius.build.convention"
@@ -15,17 +16,21 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        val composeApplication = "application.android.compose"
-        val composeLibrary = "library.android.compose"
-
-        fun createPlugin(className: String, pluginName: String) {
-            create(pluginName) {
-                id = "$group.$pluginName"
-                implementationClass = className
-            }
+        create("androidAppCompose") {
+            id = "android.app.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
-
-        createPlugin("AndroidApplicationComposeConventionPlugin", composeApplication)
-        createPlugin("AndroidLibraryComposeConventionPlugin", composeLibrary)
+        create("androidLibCompose") {
+            id = "android.lib.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        create("jvmLib") {
+            id = "jvm.lib"
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
+        create("mapbox") {
+            id = "mapbox"
+            implementationClass = "MapboxConventionPlugin"
+        }
     }
 }

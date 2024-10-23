@@ -7,8 +7,13 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.mapbox.common.MapboxOptions
+import com.mapbox.geojson.Point
+import com.mapbox.maps.extension.compose.MapboxMap
+import com.mapbox.maps.extension.compose.animation.viewport.rememberMapViewportState
 import dev.flavius.botw.MainViewModel
 
 @Composable
@@ -17,15 +22,19 @@ fun MainScreen(
     modifier: Modifier = Modifier,
     onButton: () -> Unit,
 ) {
-    mainViewModel.hasLocationPermission = true
     Surface(modifier = Modifier.fillMaxSize()) {
         Box {
-            Column(modifier = Modifier.align(Alignment.TopCenter)) {
-                Text(
-                    "Hello, from ${mainViewModel.message}!",
-                )
-                Button({ onButton()}) { Text("Click me")}
-            }
+            MapboxMap(
+                Modifier.fillMaxSize(),
+                mapViewportState = rememberMapViewportState {
+                    setCameraOptions {
+                        zoom(2.0)
+                        center(Point.fromLngLat(-98.0, 39.5))
+                        pitch(0.0)
+                        bearing(0.0)
+                    }
+                },
+            )
         }
     }
 }

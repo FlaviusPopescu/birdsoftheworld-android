@@ -5,7 +5,7 @@ import dev.flavius.build.androidSdkLevels
 import dev.flavius.build.composeBom
 import dev.flavius.build.hilt
 import dev.flavius.build.optIns
-import dev.flavius.build.testing
+import dev.flavius.build.composeTesting
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -26,7 +26,7 @@ class AndroidApplicationComposeConventionPlugin : Plugin<Project> {
             androidSdkLevels<ApplicationExtension>()
             hilt()
             composeBom()
-            testing()
+            composeTesting()
 
             optIns<KotlinAndroidProjectExtension>(
                 "com.google.accompanist.permissions.ExperimentalPermissionsApi",

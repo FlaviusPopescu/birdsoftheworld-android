@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+rootProject.name = "build-conventions"
+
 dependencyResolutionManagement {
     repositories {
         mavenCentral()

@@ -2,7 +2,7 @@ import com.android.build.api.dsl.LibraryExtension
 import dev.flavius.build.JAVA_VERSION
 import dev.flavius.build.composeBom
 import dev.flavius.build.hilt
-import dev.flavius.build.testing
+import dev.flavius.build.composeTesting
 import dev.flavius.build.androidSdkLevels
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,7 +23,7 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
             androidSdkLevels<LibraryExtension>()
             hilt()
             composeBom()
-            testing()
+            composeTesting()
         }
     }
 }
