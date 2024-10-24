@@ -1,6 +1,8 @@
 package dev.flavius.botw.data
 
 import dev.flavius.botw.core.model.SpeciesObservation
+import dev.flavius.botw.core.model.SpeciesObservation.Companion.buildUrl
+import dev.flavius.botw.core.model.SpeciesObservation.Companion.parseDateTime
 import dev.flavius.botw.core.storage.SpeciesUrlLocalDataSource
 import dev.flavius.botw.data.api.BirdApi
 import dev.flavius.botw.data.api.request.RecentNearbyObservations
@@ -29,10 +31,10 @@ class SpeciesObservationsRepository @Inject constructor(
                     totalCount = it.observationCount,
                     commonName = it.commonName,
                     scientificName = it.scientificName,
-                    speciesUrl = "TODO",
+                    speciesUrl = buildUrl(it.speciesCode),
                     latitude = it.latitude,
                     longitude = it.longitude,
-                    dateTime = Clock.System.now().toLocalDateTime(TimeZone.UTC),
+                    dateTime = parseDateTime(it.observationDate),
                     isValid = it.isValid,
                     isReviewed = it.isReviewed,
                 )

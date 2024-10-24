@@ -3,7 +3,8 @@ package dev.flavius.botw.data.api.response
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-@Serializable data class SpeciesObservation(
+@Serializable
+data class SpeciesObservation(
     @SerialName("speciesCode") val speciesCode: String,
     @SerialName("comName") val commonName: String,
     @SerialName("sciName") val scientificName: String,
