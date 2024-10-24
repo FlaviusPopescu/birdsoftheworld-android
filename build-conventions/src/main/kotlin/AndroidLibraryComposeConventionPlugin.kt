@@ -4,6 +4,7 @@ import dev.flavius.build.composeBom
 import dev.flavius.build.hilt
 import dev.flavius.build.composeTesting
 import dev.flavius.build.androidSdkLevels
+import dev.flavius.build.hiltTesting
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -22,6 +23,7 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
 
             androidSdkLevels<LibraryExtension>()
             hilt()
+            hiltTesting()
             composeBom()
             composeTesting()
         }
