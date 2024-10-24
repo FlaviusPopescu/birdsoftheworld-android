@@ -9,7 +9,6 @@ import io.ktor.client.engine.mock.MockEngine
 import io.ktor.client.engine.mock.respond
 import io.ktor.client.plugins.logging.DEFAULT
 import io.ktor.client.plugins.logging.Logger
-import io.ktor.client.plugins.resources.Resources
 import io.ktor.http.HttpHeaders
 import io.ktor.http.HttpStatusCode
 import io.ktor.http.fullPath
@@ -71,6 +70,20 @@ class BirdApiTest {
                 assertEquals(true, isSuccess)
                 getOrThrow().let { observations ->
                     assertTrue { observations.isNotEmpty() }
+                    observations.forEach {
+                        it.run {
+                            // for CSV import
+                            println(
+                                "\"$speciesCode\",\"$commonName\",\"$scientificName\"," +
+                                        "\"$locationId\",\"" +
+                                        "$locationName\",\"$observationDate\"," +
+                                        "\"$observationCount\",\"$latitude\",\"" +
+                                        "$longitude\",\"$isValid\",\"$isReviewed\"," +
+                                        "\"$isLocationPrivate\",\"" +
+                                        "$subregionId\""
+                            )
+                        }
+                    }
                 }
             }
         }

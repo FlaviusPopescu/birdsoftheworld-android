@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7bd9085c2d3eb6f5bf4fdcf8693e2925",
+    "identityHash": "535d473302e98bf7bf9db3c9c2a236e8",
     "entities": [
       {
-        "tableName": "SpeciesUrl",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`species_code` TEXT NOT NULL, `url` TEXT NOT NULL, PRIMARY KEY(`species_code`))",
+        "tableName": "SpeciesObservation",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`species_code` TEXT NOT NULL, `common_name` TEXT NOT NULL, `scientific_name` TEXT NOT NULL, `location_id` TEXT NOT NULL, `location_name` TEXT NOT NULL, `observation_date` TEXT NOT NULL, `observation_count` INTEGER NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `is_valid` INTEGER NOT NULL, `is_reviewed` INTEGER NOT NULL, `is_location_private` INTEGER NOT NULL, `subregion_id` TEXT NOT NULL, PRIMARY KEY(`species_code`, `location_id`, `observation_date`))",
         "fields": [
           {
             "fieldPath": "speciesCode",
@@ -15,8 +15,74 @@
             "notNull": true
           },
           {
-            "fieldPath": "url",
-            "columnName": "url",
+            "fieldPath": "commonName",
+            "columnName": "common_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "scientificName",
+            "columnName": "scientific_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationId",
+            "columnName": "location_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "locationName",
+            "columnName": "location_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observationDate",
+            "columnName": "observation_date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "observationCount",
+            "columnName": "observation_count",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isValid",
+            "columnName": "is_valid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isReviewed",
+            "columnName": "is_reviewed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isLocationPrivate",
+            "columnName": "is_location_private",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subregionId",
+            "columnName": "subregion_id",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -24,7 +90,9 @@
         "primaryKey": {
           "autoGenerate": false,
           "columnNames": [
-            "species_code"
+            "species_code",
+            "location_id",
+            "observation_date"
           ]
         },
         "indices": [],
@@ -34,7 +102,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7bd9085c2d3eb6f5bf4fdcf8693e2925')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '535d473302e98bf7bf9db3c9c2a236e8')"
     ]
   }
 }
