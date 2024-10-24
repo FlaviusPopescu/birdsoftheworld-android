@@ -26,11 +26,19 @@ android {
 }
 
 dependencies {
+    implementation(projects.core.data)
+    implementation(projects.core.storage)
+    implementation(projects.core.network)
     implementation(projects.feature.nearby)
     implementation(libs.accompanist.permissions)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.room.runtime)
     implementation(libs.kotlinx.serializationJson)
     implementation(libs.ktor.clientAndroid)
+    implementation(libs.ktor.clientContentNegotiation)
+    implementation(libs.ktor.serializationKotlinxJson)
+    implementation(libs.ktor.clientResources)
+    implementation(libs.ktor.clientLogging)
 }

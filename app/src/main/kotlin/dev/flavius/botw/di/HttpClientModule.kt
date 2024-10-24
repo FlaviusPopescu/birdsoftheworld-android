@@ -1,15 +1,19 @@
 package dev.flavius.botw.di
 
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import io.ktor.client.engine.HttpClientEngine
-import io.ktor.client.engine.android.AndroidClientEngine
+import dagger.hilt.components.SingletonComponent
+import dev.flavius.botw.data.api.config.birdsApiConfig
+import io.ktor.client.HttpClient
+import io.ktor.client.plugins.logging.ANDROID
+import io.ktor.client.plugins.logging.Logger
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
-abstract class HttpClientModule {
-    @Binds
-    abstract fun bindHttpClientEngine(androidClientEngine: AndroidClientEngine): HttpClientEngine
+@InstallIn(SingletonComponent::class)
+object HttpClientModule {
+    @Singleton
+    @Provides
+    fun provideHttpClient() = HttpClient { birdsApiConfig(Logger.ANDROID) }
 }

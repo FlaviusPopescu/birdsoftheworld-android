@@ -9,7 +9,7 @@ dependencies {
     implementation(libs.ktor.clientLogging)
     implementation(libs.ktor.clientResources)
     implementation(libs.ktor.serializationKotlinxJson)
-    implementation(libs.logbackClassic)
     testImplementation(libs.ktor.clientMock)
     testImplementation(libs.ktor.serverTestHost)
+    testImplementation(libs.logbackClassic)
 }

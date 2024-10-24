@@ -1,0 +1,40 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7bd9085c2d3eb6f5bf4fdcf8693e2925",
+    "entities": [
+      {
+        "tableName": "SpeciesUrl",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`species_code` TEXT NOT NULL, `url` TEXT NOT NULL, PRIMARY KEY(`species_code`))",
+        "fields": [
+          {
+            "fieldPath": "speciesCode",
+            "columnName": "species_code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "url",
+            "columnName": "url",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "species_code"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7bd9085c2d3eb6f5bf4fdcf8693e2925')"
+    ]
+  }
+}
