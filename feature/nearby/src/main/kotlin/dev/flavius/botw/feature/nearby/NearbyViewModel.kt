@@ -16,8 +16,7 @@ import javax.inject.Inject
 class NearbyViewModel @Inject constructor(
     private val speciesObservationsRepository: SpeciesObservationsRepository,
     private val placesRepository: PlacesRepository,
-
-    ) : ViewModel() {
+) : ViewModel() {
 
     fun searchPlacesByQuery(query: String) {
         viewModelScope.launch {
@@ -41,4 +40,10 @@ class NearbyViewModel @Inject constructor(
 
     private val _placeSuggestions = MutableStateFlow<List<PlaceSuggestion>>(emptyList())
     val placeSuggestions = _placeSuggestions.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            _nearbyObservations.value = speciesObservationsRepository.getSampleObservations()
+        }
+    }
 }

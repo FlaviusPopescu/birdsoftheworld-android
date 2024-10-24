@@ -2,4 +2,13 @@
 <resources>
     <string name="search_hint">Search places</string>
     <string name="search_content_description">search box for locations</string>
+    <string name="search_clear_content_description">clear search box</string>
+    <string name="observation_info">information box for species observation</string>
+    <string name="observation_button_information">Species Information</string>
+    <string name="observation_reviewed">observation is reviewed</string>
+    <string name="observation_invalid">observation is not valid</string>
+    <plurals name="observation_count">
+        <item quantity="one">%1$d observation</item>
+        <item quantity="other">%1$d observations</item>
+    </plurals>
 </resources>

@@ -1,8 +1,7 @@
 package dev.flavius.botw.core.data
 
+import dev.flavius.botw.core.data.extensions.toDomainModel
 import dev.flavius.botw.core.model.SpeciesObservation
-import dev.flavius.botw.core.model.SpeciesObservation.Companion.buildUrl
-import dev.flavius.botw.core.model.SpeciesObservation.Companion.parseDateTime
 import dev.flavius.botw.core.storage.SpeciesObservationsLocalDataSource
 import dev.flavius.botw.data.network.birds.BirdApi
 import dev.flavius.botw.data.network.birds.request.RecentNearbyObservations
@@ -22,30 +21,16 @@ class SpeciesObservationsRepository @Inject constructor(
             .get(RecentNearbyObservations(latitude, longitude))
             .getOrNull()
             ?.map { networkModel ->
-                SpeciesObservation(
-                    totalCount = networkModel.observationCount,
-                    commonName = networkModel.commonName,
-                    scientificName = networkModel.scientificName,
-                    speciesUrl = buildUrl(networkModel.speciesCode),
-                    latitude = networkModel.latitude,
-                    longitude = networkModel.longitude,
-                    dateTime = parseDateTime(networkModel.observationDate),
-                    isValid = networkModel.isValid,
-                    isReviewed = networkModel.isReviewed,
-                )
+                networkModel.toDomainModel()
             }
-            ?: speciesObservationsLocalDataSource.getSampleObservations().map { dbModel ->
-                SpeciesObservation(
-                    totalCount = dbModel.observationCount,
-                    commonName = dbModel.commonName,
-                    scientificName = dbModel.scientificName,
-                    speciesUrl = buildUrl(dbModel.speciesCode),
-                    latitude = dbModel.latitude,
-                    longitude = dbModel.longitude,
-                    dateTime = parseDateTime(dbModel.observationDate),
-                    isValid = dbModel.isValid,
-                    isReviewed = dbModel.isReviewed,
-                )
-            }
+            ?: speciesObservationsLocalDataSource
+                .getSampleObservations()
+                .map { dbModel ->
+                    dbModel.toDomainModel()
+                }
     }
+
+    suspend fun getSampleObservations() = speciesObservationsLocalDataSource
+        .getSampleObservations()
+        .map { it.toDomainModel() }
 }
