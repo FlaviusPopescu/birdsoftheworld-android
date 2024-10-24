@@ -1,0 +1,311 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "id": "dXJuOm1ieHBsYzpHYUVzN0E",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.008224,
+                    38.887604
+                ]
+            },
+            "properties": {
+                "mapbox_id": "dXJuOm1ieHBsYzpHYUVzN0E",
+                "feature_type": "neighborhood",
+                "full_address": "National Mall, Washington, District of Columbia, United States",
+                "name": "National Mall",
+                "name_preferred": "National Mall",
+                "coordinates": {
+                    "longitude": -77.008224,
+                    "latitude": 38.887604
+                },
+                "place_formatted": "Washington, District of Columbia, United States",
+                "bbox": [
+                    -77.055946,
+                    38.879978,
+                    -77.002217,
+                    38.898786
+                ],
+                "context": {
+                    "postcode": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBOExPN0E",
+                        "name": "20515"
+                    },
+                    "place": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpGSmlvN0E",
+                        "name": "Washington",
+                        "wikidata_id": "Q61"
+                    },
+                    "region": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpCUVRz",
+                        "name": "District of Columbia",
+                        "wikidata_id": "Q3551781",
+                        "region_code": "DC",
+                        "region_code_full": "US-DC"
+                    },
+                    "country": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpJdXc",
+                        "name": "United States",
+                        "wikidata_id": "Q30",
+                        "country_code": "US",
+                        "country_code_alpha_3": "USA"
+                    },
+                    "neighborhood": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpHYUVzN0E",
+                        "name": "National Mall"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "address.708893116152694",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.887395,
+                    40.255642
+                ]
+            },
+            "properties": {
+                "mapbox_id": "address.708893116152694",
+                "feature_type": "street",
+                "full_address": "National Hall of Fame Drive, Harrisburg, Pennsylvania 17101, United States",
+                "name": "National Hall of Fame Drive",
+                "name_preferred": "National Hall of Fame Drive",
+                "coordinates": {
+                    "longitude": -76.887395,
+                    "latitude": 40.255642
+                },
+                "place_formatted": "Harrisburg, Pennsylvania 17101, United States",
+                "context": {
+                    "street": {
+                        "mapbox_id": "address.708893116152694",
+                        "name": "National Hall of Fame Drive"
+                    },
+                    "neighborhood": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpCdmxNN0E",
+                        "name": "City Island",
+                        "wikidata_id": "Q5123247"
+                    },
+                    "postcode": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBd3Z1N0E",
+                        "name": "17101"
+                    },
+                    "place": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpDRzRvN0E",
+                        "name": "Harrisburg",
+                        "wikidata_id": "Q25280"
+                    },
+                    "district": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpXa2Jz",
+                        "name": "Dauphin County",
+                        "wikidata_id": "Q488690"
+                    },
+                    "region": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBa1Rz",
+                        "name": "Pennsylvania",
+                        "wikidata_id": "Q1400",
+                        "region_code": "PA",
+                        "region_code_full": "US-PA"
+                    },
+                    "country": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpJdXc",
+                        "name": "United States",
+                        "wikidata_id": "Q30",
+                        "country_code": "US",
+                        "country_code_alpha_3": "USA"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "dXJuOm1ieGFkci1zdHI6N2QwNDg0YjgtN2U1NC00MDhhLWEzMTMtYjM3MzZkNTQ2MTQ1",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.055176,
+                    38.8587
+                ]
+            },
+            "properties": {
+                "mapbox_id": "dXJuOm1ieGFkci1zdHI6N2QwNDg0YjgtN2U1NC00MDhhLWEzMTMtYjM3MzZkNTQ2MTQ1",
+                "feature_type": "street",
+                "full_address": "National Hall Reagan, Arlington, Virginia 22202, United States",
+                "name": "National Hall Reagan",
+                "name_preferred": "National Hall Reagan",
+                "coordinates": {
+                    "longitude": -77.055176,
+                    "latitude": 38.8587
+                },
+                "place_formatted": "Arlington, Virginia 22202, United States",
+                "context": {
+                    "street": {
+                        "mapbox_id": "dXJuOm1ieGFkci1zdHI6N2QwNDg0YjgtN2U1NC00MDhhLWEzMTMtYjM3MzZkNTQ2MTQ1",
+                        "name": "National Hall Reagan"
+                    },
+                    "neighborhood": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBVkNNN0E",
+                        "name": "Aurora Highlands",
+                        "alternate": {
+                            "mapbox_id": "dXJuOm1ieHBsYzpIVmNzN0E",
+                            "name": "Pentagon City",
+                            "wikidata_id": "Q7164971"
+                        }
+                    },
+                    "postcode": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpCQjRPN0E",
+                        "name": "22202"
+                    },
+                    "place": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpxV2pz",
+                        "name": "Arlington",
+                        "wikidata_id": "Q107126"
+                    },
+                    "district": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpDb2Jz",
+                        "name": "Arlington County",
+                        "wikidata_id": "Q107126"
+                    },
+                    "region": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBV1Rz",
+                        "name": "Virginia",
+                        "wikidata_id": "Q1370",
+                        "region_code": "VA",
+                        "region_code_full": "US-VA"
+                    },
+                    "country": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpJdXc",
+                        "name": "United States",
+                        "wikidata_id": "Q30",
+                        "country_code": "US",
+                        "country_code_alpha_3": "USA"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "dXJuOm1ieGFkci1zdHI6ZmI5NzczZTUtZjIyYy00NWM1LTg5MzEtZjU1MmI0M2ZiY2Ex",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.481474,
+                    45.206891
+                ]
+            },
+            "properties": {
+                "mapbox_id": "dXJuOm1ieGFkci1zdHI6ZmI5NzczZTUtZjIyYy00NWM1LTg5MzEtZjU1MmI0M2ZiY2Ex",
+                "feature_type": "street",
+                "full_address": "Route Nationale, 38470 Saint-Gervais, France",
+                "name": "Route Nationale",
+                "name_preferred": "Route Nationale",
+                "coordinates": {
+                    "longitude": 5.481474,
+                    "latitude": 45.206891
+                },
+                "place_formatted": "38470 Saint-Gervais, France",
+                "context": {
+                    "street": {
+                        "mapbox_id": "dXJuOm1ieGFkci1zdHI6ZmI5NzczZTUtZjIyYy00NWM1LTg5MzEtZjU1MmI0M2ZiY2Ex",
+                        "name": "Route Nationale"
+                    },
+                    "postcode": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBUjR1VFE",
+                        "name": "38470"
+                    },
+                    "place": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpEVlZJVFE",
+                        "name": "Saint-Gervais",
+                        "wikidata_id": "Q1068365"
+                    },
+                    "region": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBV1JO",
+                        "name": "Isère",
+                        "wikidata_id": "Q12559",
+                        "region_code": "38",
+                        "region_code_full": "FR-38",
+                        "alternate": {
+                            "mapbox_id": "dXJuOm1ieHBsYzpFQ1JO",
+                            "name": "Auvergne-Rhône-Alpes",
+                            "wikidata_id": "Q18338206",
+                            "region_code": "ARA",
+                            "region_code_full": "FR-ARA"
+                        }
+                    },
+                    "country": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpJazA",
+                        "name": "France",
+                        "wikidata_id": "Q142",
+                        "country_code": "FR",
+                        "country_code_alpha_3": "FRA"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "dXJuOm1ieGFkci1zdHI6NDU5YTAyY2UtYWExNi00MDc3LTk4ZGYtOGJjMGQ3MzAzZDc2",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -79.995115,
+                    39.627664
+                ]
+            },
+            "properties": {
+                "mapbox_id": "dXJuOm1ieGFkci1zdHI6NDU5YTAyY2UtYWExNi00MDc3LTk4ZGYtOGJjMGQ3MzAzZDc2",
+                "feature_type": "street",
+                "full_address": "Mall Road, Westover, West Virginia 26501, United States",
+                "name": "Mall Road",
+                "name_preferred": "Mall Road",
+                "coordinates": {
+                    "longitude": -79.995115,
+                    "latitude": 39.627664
+                },
+                "place_formatted": "Westover, West Virginia 26501, United States",
+                "context": {
+                    "street": {
+                        "mapbox_id": "dXJuOm1ieGFkci1zdHI6NDU5YTAyY2UtYWExNi00MDc3LTk4ZGYtOGJjMGQ3MzAzZDc2",
+                        "name": "Mall Road"
+                    },
+                    "postcode": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpCUDN1N0E",
+                        "name": "26501"
+                    },
+                    "place": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpGUk5JN0E",
+                        "name": "Westover",
+                        "alternate": {
+                            "mapbox_id": "dXJuOm1ieHBsYzpEU0VJN0E",
+                            "name": "Morgantown"
+                        }
+                    },
+                    "district": {
+                        "mapbox_id": "dXJuOm1ieHBsYzo5RWJz",
+                        "name": "Monongalia County",
+                        "wikidata_id": "Q488649"
+                    },
+                    "region": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpBWVRz",
+                        "name": "West Virginia",
+                        "wikidata_id": "Q1371",
+                        "region_code": "WV",
+                        "region_code_full": "US-WV"
+                    },
+                    "country": {
+                        "mapbox_id": "dXJuOm1ieHBsYzpJdXc",
+                        "name": "United States",
+                        "wikidata_id": "Q30",
+                        "country_code": "US",
+                        "country_code_alpha_3": "USA"
+                    }
+                }
+            }
+        }
+    ],
+    "attribution": "NOTICE: © 2024 Mapbox and its suppliers. All rights reserved. Use of this data is subject to the Mapbox Terms of Service (https://www.mapbox.com/about/maps/). This response and the information it contains may not be retained."
+}

@@ -4,7 +4,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
 class MapboxConventionPlugin : Plugin<Project> {
-    private val mapboxAndroidLibraryAlias = "mapbox-android"
+    private val mapboxAndroidLibraryAlias = "mapbox-maps-android"
     private val mapboxComposeLibraryAlias = "mapbox-extension-compose"
 
     override fun apply(target: Project) {

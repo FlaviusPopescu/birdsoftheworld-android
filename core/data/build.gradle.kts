@@ -6,6 +6,7 @@ android.namespace = "dev.flavius.botw.core.data"
 
 dependencies {
     implementation(projects.core.model)
-    implementation(projects.core.network)
+    implementation(projects.core.networkBirds)
+    implementation(projects.core.networkPlaces)
     implementation(projects.core.storage)
 }

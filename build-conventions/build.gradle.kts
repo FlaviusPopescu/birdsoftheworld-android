@@ -32,6 +32,10 @@ gradlePlugin {
             id = "jvm.lib"
             implementationClass = "JvmLibraryConventionPlugin"
         }
+        create("ktorClient") {
+            id = "ktor.client"
+            implementationClass = "KtorClientConventionPlugin"
+        }
         create("mapbox") {
             id = "mapbox"
             implementationClass = "MapboxConventionPlugin"

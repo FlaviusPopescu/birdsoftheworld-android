@@ -35,6 +35,7 @@ dependencyResolutionManagement {
             plugin("convention-androidLibraryCompose", "android.lib.compose").withoutVersion()
             plugin("convention-androidLibrary", "android.lib").withoutVersion()
             plugin("convention-jvm", "jvm.lib").withoutVersion()
+            plugin("convention-ktorClient", "ktor.client").withoutVersion()
             plugin("convention-mapbox", "mapbox").withoutVersion()
         }
     }
@@ -44,7 +45,9 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":app")
 include(":core:data")
+include(":core:di")
 include(":core:model")
-include(":core:network")
+include(":core:network-birds")
+include(":core:network-places")
 include(":core:storage")
 include(":feature:nearby")

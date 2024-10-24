@@ -4,16 +4,21 @@ plugins {
     alias(libs.plugins.convention.mapbox)
 }
 
+fun getQuotedStringProperty(gradlePropertyName: String) =
+    runCatching { property(gradlePropertyName).toString().let { "\"$it\"" } }
+        .getOrDefault("\"\"")
+
 android {
     namespace = "dev.flavius.botw"
     buildFeatures.buildConfig = true
-    defaultConfig.buildConfigField(
-        "String",
-        "MAPBOX_ACCESS_TOKEN",
-        runCatching {
-            property("mapbox_access_token").toString().let { "\"$it\"" }
-        }.getOrDefault("\"\"")
-    )
+    defaultConfig {
+        buildConfigField(
+            "String", "MAPBOX_ACCESS_TOKEN", getQuotedStringProperty("mapbox_access_token")
+        )
+        buildConfigField(
+            "String", "EBIRD_ACCESS_TOKEN", getQuotedStringProperty("ebird_access_token")
+        )
+    }
     packaging {
         resources {
             excludes.addAll(
@@ -27,8 +32,10 @@ android {
 
 dependencies {
     implementation(projects.core.data)
+    implementation(projects.core.di)
+    implementation(projects.core.networkBirds)
+    implementation(projects.core.networkPlaces)
     implementation(projects.core.storage)
-    implementation(projects.core.network)
     implementation(projects.feature.nearby)
     implementation(libs.accompanist.permissions)
     implementation(libs.androidx.activity.compose)
