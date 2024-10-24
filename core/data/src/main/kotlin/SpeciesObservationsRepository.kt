@@ -15,6 +15,8 @@ class SpeciesObservationsRepository @Inject constructor(
     private val birdApi: BirdApi,
     private val speciesUrlLocalDataSource: SpeciesUrlLocalDataSource,
 ) {
+    suspend fun getTotalSpecies() = speciesUrlLocalDataSource.totalSpecies()
+
     suspend fun getNearbyObservations(
         latitude: Float,
         longitude: Float

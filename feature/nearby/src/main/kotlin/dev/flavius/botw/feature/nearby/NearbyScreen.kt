@@ -3,7 +3,11 @@ package dev.flavius.botw.feature.nearby
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.mapbox.geojson.Point
 import com.mapbox.maps.extension.compose.MapboxMap
@@ -28,6 +32,13 @@ fun NearbyScreen(
                     }
                 },
             )
+            val speciesCount by nearbyViewModel.speciesCount.collectAsState()
+            LaunchedEffect(Unit) {
+                nearbyViewModel.getSpeciesCount()
+            }
+            Surface {
+                Text("total species = $speciesCount")
+            }
         }
     }
 }
