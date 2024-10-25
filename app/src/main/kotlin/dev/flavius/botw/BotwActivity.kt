@@ -75,10 +75,7 @@ class BotwActivity : ComponentActivity() {
                         val nearbyViewModel = hiltViewModel<NearbyViewModel>().apply {
                             hasLocationPermission = locationPermissionState.status.isGranted
                         }
-                        NearbyScreen(nearbyViewModel) {
-                            navController.popBackStack()
-                            navController.navigate(Permissions)
-                        }
+                        NearbyScreen(nearbyViewModel)
                     }
                 }
             }

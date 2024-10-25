@@ -2,9 +2,9 @@ package dev.flavius.botw.theme
 
 import androidx.compose.ui.graphics.Color
 
-val primaryLight = Color(0xFF8F4C38)
+val primaryLight = Color(0xFF365515)
 val onPrimaryLight = Color(0xFFFFFFFF)
-val primaryContainerLight = Color(0xFFFFDBD1)
+val primaryContainerLight = Color(0xFF365515)
 val onPrimaryContainerLight = Color(0xFF3A0B01)
 val secondaryLight = Color(0xFF77574E)
 val onSecondaryLight = Color(0xFFFFFFFF)

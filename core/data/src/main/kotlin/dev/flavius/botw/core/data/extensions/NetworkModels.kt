@@ -5,6 +5,7 @@ import dev.flavius.botw.core.model.SpeciesObservation.Companion.buildUrl
 import dev.flavius.botw.core.model.SpeciesObservation.Companion.parseDateTime
 import dev.flavius.botw.data.network.birds.response.SpeciesObservation as NetworkSpeciesObservation
 
+@kotlin.uuid.ExperimentalUuidApi
 fun NetworkSpeciesObservation.toDomainModel() = SpeciesObservation(
     totalCount = observationCount,
     commonName = commonName,
@@ -12,7 +13,7 @@ fun NetworkSpeciesObservation.toDomainModel() = SpeciesObservation(
     speciesUrl = buildUrl(speciesCode),
     latitude = latitude,
     longitude = longitude,
-    dateTime = parseDateTime(observationDate),
+    approximateEpochSeconds = parseDateTime(observationDate),
     isValid = isValid,
     isReviewed = isReviewed,
 )

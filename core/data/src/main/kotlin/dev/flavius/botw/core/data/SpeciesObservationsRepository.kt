@@ -7,7 +7,9 @@ import dev.flavius.botw.data.network.birds.BirdApi
 import dev.flavius.botw.data.network.birds.request.RecentNearbyObservations
 import javax.inject.Inject
 import javax.inject.Singleton
+import kotlin.uuid.ExperimentalUuidApi
 
+@OptIn(ExperimentalUuidApi::class)
 @Singleton
 class SpeciesObservationsRepository @Inject constructor(
     private val birdApi: BirdApi,

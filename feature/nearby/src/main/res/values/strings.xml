@@ -11,4 +11,10 @@
         <item quantity="one">%1$d observation</item>
         <item quantity="other">%1$d observations</item>
     </plurals>
+    <string name="view_button_map">Map</string>
+    <string name="view_button_map_content_description">Switch to map view</string>
+    <string name="view_button_list_content_description">Switch to List view</string>
+    <string name="view_button_list">List</string>
+    <string name="item_see_on_map">View on map</string>
+
 </resources>
