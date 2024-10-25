@@ -15,6 +15,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.isGranted
 import com.google.accompanist.permissions.rememberPermissionState
@@ -23,8 +24,10 @@ import dev.flavius.botw.feature.nearby.NearbyScreen
 import dev.flavius.botw.feature.nearby.NearbyViewModel
 import dev.flavius.botw.navigation.Main
 import dev.flavius.botw.navigation.Permissions
+import dev.flavius.botw.navigation.Webview
 import dev.flavius.botw.permissions.PermissionsScreen
 import dev.flavius.botw.theme.AppTheme
+import dev.flavius.botw.web.BirdsOfTheWorldWebsite
 
 @AndroidEntryPoint
 class BotwActivity : ComponentActivity() {
@@ -75,7 +78,12 @@ class BotwActivity : ComponentActivity() {
                         val nearbyViewModel = hiltViewModel<NearbyViewModel>().apply {
                             hasLocationPermission = locationPermissionState.status.isGranted
                         }
-                        NearbyScreen(nearbyViewModel)
+                        NearbyScreen(nearbyViewModel) {
+                            navController.navigate(Webview(it))
+                        }
+                    }
+                    composable<Webview> {
+                        BirdsOfTheWorldWebsite(it.toRoute<Webview>().speciesPage)
                     }
                 }
             }

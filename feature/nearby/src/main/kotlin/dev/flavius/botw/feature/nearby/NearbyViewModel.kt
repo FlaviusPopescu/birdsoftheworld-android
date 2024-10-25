@@ -19,6 +19,7 @@ class NearbyViewModel @Inject constructor(
 ) : ViewModel() {
 
     fun searchPlacesByQuery(query: String) {
+        _placeSuggestions.value = emptyList()
         viewModelScope.launch {
             _placeSuggestions.value = placesRepository.getPlaces(query)
         }

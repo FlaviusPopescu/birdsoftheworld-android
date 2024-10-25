@@ -35,6 +35,7 @@ import dev.flavius.botw.main.R
 fun NearbyScreen(
     nearbyViewModel: NearbyViewModel,
     modifier: Modifier = Modifier,
+    onLearnMore: (String) -> Unit,
 ) {
     val placeSuggestions by nearbyViewModel.placeSuggestions.collectAsState()
     val speciesObservations by nearbyViewModel.nearbyObservations.collectAsState()
@@ -49,9 +50,6 @@ fun NearbyScreen(
                 onPlaceSelected = { nearbyViewModel.searchObservationsByPlace(it) }
             )
             Box {
-                val onLearnMore = { url: String ->
-                    // todo
-                }
                 var selectedSpeciesObservation by remember {
                     mutableStateOf<SpeciesObservation?>(
                         null

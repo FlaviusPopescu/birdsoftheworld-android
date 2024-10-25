@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import dev.flavius.botw.core.model.PlaceSuggestion
 import dev.flavius.botw.main.R
 import kotlinx.coroutines.delay
@@ -87,12 +88,16 @@ fun SearchBar(
             DropdownMenu(
                 expanded = expanded,
                 onDismissRequest = { expanded = false },
-                modifier = Modifier.background(Color.White)
+                modifier = Modifier.background(Color.White).fillMaxWidth()
             ) {
                 autoSuggestOptions.forEach {
                     DropdownMenuItem(
                         text = {
-                            Text(it.address, style = MaterialTheme.typography.labelLarge)
+                            Text(
+                                it.address,
+                                style = MaterialTheme.typography.bodyLarge,
+                                fontSize = 18.sp
+                            )
                         },
                         onClick = {
                             text = it.address
@@ -110,7 +115,7 @@ fun SearchBar(
             shouldSearch = true
             return@LaunchedEffect
         }
-        delay(1_500L)
+        delay(800L)
         onTextSteady(text)
     }
 }
